@@ -1,0 +1,54 @@
+<mat-toolbar color="primary" class="header">
+        <button mat-mini-fab *ngIf="auth.authenticated" color="primary" [class.active]="toggleActive" (click)="toggleRightSidenav()" aria-label="side navigation menu toggle button"><mat-icon>menu</mat-icon></button>
+              <svg width="113" height="69" viewBox="0 0 113 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Vector</title>
+                <desc>Created using Figma</desc>
+                <g id="Canvas" transform="translate(719 493)">
+                <g id="Vector" filter="url(#filter0_d)">
+                <use xlink:href="#path0_fill" transform="translate(-714.5 -493)" fill="#FFB6B6"/>
+                </g>
+                </g>
+                <defs>
+                <filter id="filter0_d" filterUnits="userSpaceOnUse" x="-719" y="-493" width="113" height="69" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+                <feOffset dx="0" dy="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                </filter>
+                <path id="path0_fill" d="M 104.5 16L 104.5 25.5L 101 26.5L 98.5 28.5L 96.5 30.5L 93.5 31.5L 89.5 31.5L 86 31.5L 80.5 31.5L 77 31.5C 71.5 31.5 70.5 35.5 70.5 35.5L 67.5 38.5L 69 44.5L 70.5 52L 70.5 58.5L 67.5 58.5L 65 60.5L 62 58.5L 60 54L 60 50L 58 48L 58 42L 56.5 38.5L 54 35.5L 51.5 35.5L 49 35.5L 41 35.5L 36 35.5L 32 35.5L 24.5 38.5L 20.5 43L 20.5 50L 20.5 54L 20.5 58.5L 17 58.5L 15 60.5L 12 58.5L 12 54L 9.5 48L 9.5 43L 5.5 35.5L 3 31.5L 3 27.5L 3 23.5L 3 18.5L 0 12.5L 0 9L 3 9L 5.5 11.5L 3 14L 3 18.5L 5.5 14L 14 7.5L 22.5 6.5L 41 6.5L 58 6.5L 67.5 6.5L 80.5 6.5L 85 2.5L 89.5 0L 93.5 0L 98.5 0L 93.5 4L 89.5 6.5L 89.5 9L 92.5 10.5L 93.5 15L 96.5 17.5L 102 16.5L 104.5 16Z"/>
+                </defs>
+                </svg>
+
+      <span class="example-spacer" *ngIf="!auth.authenticated"></span>
+
+      <span routerLink="/">チョコキャット</span>
+      <span class="example-spacer"></span>
+
+      <button mat-button *ngIf="!auth.authenticated" mat-button (click)="auth.login()">Log in to auth0</button>
+      <button mat-button *ngIf="auth.authenticated" mat-button (click)="auth.logout()">Log Out</button>
+      <!-- <span *ngIf="auth.authenticated">{{auth.userProfile.nickname}} </span> -->
+      <img mat-card-avatar *ngIf="auth.authenticated" routerLink="/profile" href src="{{auth.userProfile.picture}}" alt="{{auth.userProfile.nickname}}">
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="auth.authenticated">
+        <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/" href *ngIf="auth.authenticated" >
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </button>
+
+          <button mat-menu-item  routerLink="/profile" href *ngIf="auth.authenticated">
+            <mat-icon>face</mat-icon>
+            <span>profile</span>
+          </button>
+
+          <button mat-menu-item (click)="auth.logout()">
+              <mat-icon>power_settings_new</mat-icon>
+              <span>Logout</span>
+          </button>
+
+        </mat-menu> -->
+  </mat-toolbar>

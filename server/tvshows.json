@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Friends",
+    "source": "NBC"
+  },
+	{
+    "id": 2,
+    "name": "House",
+    "source": "Fox"
+	},
+  {
+    "id": 3,
+    "name": "Survivor",
+    "source": "CBS"
+	},
+  {
+    "id": 4,
+    "name": "ER",
+    "source": "NBC"
+	},
+  {
+    "id": 5,
+    "name": "Full House",
+    "source": "Netflix"
+	},
+  {
+    "id": 6,
+    "name": "Cops",
+    "source": "Paramount Network"
+	}
+]

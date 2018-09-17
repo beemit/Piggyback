@@ -1,0 +1,34 @@
+<div class="product-container">
+
+  <mat-card class="top-card-auth">
+    <mat-card-header>
+          <mat-card-title> <h1>New Products!</h1></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let product of products"> {{ product.name }} - {{ product.price }}$ </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="inner-content">
+<mat-card class="example-card" *ngFor="let product of products">
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image  [src]="product.productImage" alt="Photo of a {{ product.name }}">
+  <mat-card-content>
+    <p>
+      {{ product.name }}
+    </p>
+  </mat-card-content>
+  <mat-card-footer>
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    <mat-chip-list>
+      <mat-chip color="accent" selected="true">{{ product.name }} - {{ product.price }}$ Buy it now!</mat-chip><mat-progress-bar mode="buffer"></mat-progress-bar>
+      </mat-chip-list>
+  </mat-card-footer>
+</mat-card>
+</div>

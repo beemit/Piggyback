@@ -1,0 +1,58 @@
+<mat-sidenav-container class="menu" autosize >
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+                 <button mat-menu-item [matMenuTriggerFor]="menu" *ngIf="auth.authenticated">
+                  <mat-icon matListIcon>more_vert</mat-icon>
+                </button>
+
+                <button mat-menu-item (click)="sidenav.toggle()" routerLink="/" href *ngIf="auth.authenticated" >
+                  <mat-icon matListIcon>home</mat-icon>
+                  <span>Home</span>
+                </button>
+
+                <button mat-menu-item (click)="sidenav.toggle()" routerLink="/profile" href *ngIf="auth.authenticated">
+                  <mat-icon matListIcon>face</mat-icon>
+                  <span>profile</span>
+                </button>
+
+                <button mat-menu-item (click)="auth.logout()" *ngIf="auth.authenticated">
+                    <mat-icon matListIcon>power_settings_new</mat-icon>
+                    <span>Logout</span>
+                </button>
+
+                <button mat-menu-item (click)="sidenav.toggle()" routerLink="/store" *ngIf="auth.authenticated">
+                  <mat-icon matListIcon>power_settings_new</mat-icon>
+                  <span>Store</span>
+                </button>
+
+                <button mat-raised-button color="primary" (click)="auth.login()" *ngIf="!auth.authenticated">
+                  <mat-icon >power_settings_new</mat-icon>
+                  <span>Log In</span>
+                </button>
+
+                <button mat-raised-button color="primary" (click)="sidenav.toggle()" routerLink="/login">
+                    <mat-icon >power_settings_new</mat-icon>
+                    <span>Log out</span>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                  <p *ngIf="auth.authenticated"><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+                </mat-menu>
+              </mat-sidenav>
+
+
+    <mat-sidenav-content>
+        <app-toolbar></app-toolbar>
+        <alert></alert>
+        <div class="top-inner-stripe">
+            <div class="top-inner-stripe"></div>
+        </div>
+        <div class="bottom-inner-stripe"></div>
+
+        <div class="content-wrapper">
+          <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,76 @@
+<!-- <mat-card class="top-card-auth">
+    <mat-card-content>
+        <img src="https://vignette.wikia.nocookie.net/hellokitty/images/f/f1/Sanrio_Characters_Chococat_Image020.png/revision/latest?cb=20170519003449
+        " alt="チョコキャット (Chokokyatto)">
+        <p>
+            Hello, {{auth.userProfile?.name}} !
+        </p>
+        <button mat-raised-button color="primary" (click)="auth.logout()">Log Out</button>
+ -->
+ <div class="inner-content">
+ <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{auth.userProfile.nickname}}</mat-card-title>
+      <mat-card-subtitle>{{auth.userProfile.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{auth.userProfile.picture}}" alt="User Photo">
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let profileProp of profileArray">
+             {{profileProp}}
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+          <button mat-button routerLink="/" href>      <mat-icon>home</mat-icon>
+          </button>
+    </mat-card-actions>
+
+  </mat-card>
+  <mat-card class="card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{auth.userProfile.nickname}}</mat-card-title>
+        <mat-card-subtitle>{{auth.userProfile.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{auth.userProfile.picture}}" alt="User Photo">
+      <mat-card-content>
+          <mat-list>
+              <mat-list-item *ngFor="let profileProp of profileArray">
+               {{profileProp}}
+              </mat-list-item>
+          </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+            <button mat-button routerLink="/" href>      <mat-icon>home</mat-icon>
+            </button>
+      </mat-card-actions>
+    </mat-card>
+
+<mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{auth.userProfile.nickname}}</mat-card-title>
+      <mat-card-subtitle>{{auth.userProfile.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{auth.userProfile.picture}}" alt="User Photo">
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let profileProp of profileArray">
+             {{profileProp}}
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+          <button mat-button routerLink="/" href>      <mat-icon>home</mat-icon>
+          </button>
+    </mat-card-actions>
+</mat-card>
+</div>
